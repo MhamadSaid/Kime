@@ -29,19 +29,6 @@ html {
   scroll-behavior: smooth;
 }
 
-html::-webkit-scrollbar {
-  width: 1rem;
-}
-
-html::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-html::-webkit-scrollbar-thumb {
-  background-color: var(--color-white);
-  border-radius: 5rem;
-}
-
 body {
   background: var(--bg);
 }
@@ -64,11 +51,6 @@ body {
   text-transform: uppercase;
 }
 
-#logo img {
-  width: 40%;
-  height: 30%;
-}
-
 .kime-header {
   background: var(--bg);
   display: flex;
@@ -80,7 +62,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 100;
 }
 
 .kime-header .logo img {
@@ -94,6 +76,12 @@ body {
   font-size: 1.6rem;
   color: var(--color-white);
   margin-left: 50px;
+}
+
+.kime-header .navbar a.active {
+  color: var(--color-yellow);
+  border-bottom: 0.1rem solid var(--color-yellow);
+  padding-bottom: 0.5rem;
 }
 
 .kime-header .navbar a:hover {
@@ -131,7 +119,6 @@ body {
 }
 
 /* start slide */
-
 .slider {
   position: relative;
   width: 100%;
@@ -567,73 +554,89 @@ body {
   color: var(--color-yellow);
 }
 
-.kime-contact .row {
-  display: flex;
-  background: rgba(20, 20, 20, 0.699);
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.kime-contact .row .map {
-  flex: 1 1 45rem;
-  width: 100%;
-  object-fit: cover;
-}
-
-.kime-contact .row form {
-  flex: 1 1 45rem;
-  padding: 5rem 2rem;
-  text-align: center;
-}
-
-.kime-contact .row form h3 {
-  text-transform: uppercase;
-  font-size: 3.5rem;
+/* Contact Section */
+.kime-contact {
   color: var(--color-white);
+  text-align: center;
+  padding: 6rem 0;
 }
 
-.kime-contact .row form .inputBox {
+.kime-contact h1 {
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+}
+
+.kime-contact form {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 3rem;
+  background: var(--bg);
+  border: 0.1rem solid var(--color-white);
+  border-radius: 1rem;
+}
+
+.kime-contact h3 {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.kime-contact .inputBox {
   display: flex;
   align-items: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  background: var(--bg);
-  border: var(--border);
+  margin-bottom: 1.5rem;
+  border-bottom: 0.1rem solid var(--color-white);
+  padding-bottom: 0.5rem;
 }
 
-.kime-contact .row form .inputBox span {
-  color: var(--color-white);
-  font-size: 2rem;
-  padding-left: 2rem;
+.kime-contact .inputBox span {
+  font-size: 1.8rem;
+  padding: 1rem;
 }
 
-.kime-contact .row form .inputBox input {
-  width: 100%;
-  padding: 2rem;
+.kime-contact .inputBox input {
+  flex: 1;
+  padding: 1rem;
   font-size: 1.7rem;
   color: var(--color-white);
-  text-transform: none;
   background: none;
+  border: none;
+  outline: none;
 }
 
+.kime-contact input[type="submit"] {
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.7rem;
+  background: var(--color-yellow);
+  color: var(--color-white);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* Footer Section */
 .kime-footer {
-  background: var(--color-black);
+  background: #17171c;
   text-align: center;
+  padding: 2rem 0;
 }
 
 .kime-footer .share {
-  padding: 1rem 0;
+  margin-bottom: 2rem;
 }
 
 .kime-footer .share a {
-  height: 5rem;
-  width: 5rem;
-  line-height: 5rem;
-  font-size: 2rem;
+  display: inline-block;
+  height: 4rem;
+  width: 4rem;
+  line-height: 4rem;
+  font-size: 1.8rem;
   color: var(--color-white);
-  border: var(--border);
-  margin: 0.3rem;
+  border: 0.1rem solid var(--color-white);
+  margin: 0.5rem;
   border-radius: 50%;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .kime-footer .share a:hover {
@@ -644,26 +647,27 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 2rem 0;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .kime-footer .links a {
-  padding: 0.7rem 2rem;
+  padding: 0.5rem 1.5rem;
   color: var(--color-white);
-  border: var(--border);
-  font-size: 2rem;
+  font-size: 1.6rem;
+  border: none;
+  text-transform: capitalize;
+  transition: color 0.3s ease-in-out;
 }
 
 .kime-footer .links a:hover {
-  background: var(--color-yellow);
+  color: var(--color-yellow);
 }
 
 .kime-footer .credit {
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: var(--color-white);
   font-weight: lighter;
-  padding: 1.5rem;
+  margin-top: 2rem;
 }
 
 .kime-footer .credit span {
